@@ -165,7 +165,7 @@ h2.t{
 .s-proto .scene-scroll{padding:0}
 .proto-sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;flex:none}
 #machine{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
-.proto-spacer{height:440vh;height:440svh;flex:none}
+.proto-spacer{height:330vh;height:330svh;flex:none}
 .era{
   position:absolute;left:var(--pad);top:50%;transform:translateY(-40%);
   max-width:min(70vw,560px);opacity:0;pointer-events:none;
@@ -506,35 +506,29 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
           <div class="scr"><span>SCROLL</span><span class="bar"></span></div>
         </div>
         <div class="era" id="era1">
-          <p class="yr">c. 1,000,000 B.C.</p>
-          <h3>火</h3>
-          <p class="ln">火は、自然の産物だった。「炉」という仕組みに変えたとき、人類は夜と冬を克服した。</p>
-          <p class="rev">01 — FIRE → HEARTH</p>
-        </div>
-        <div class="era" id="era2">
           <p class="yr">1769 — 産業革命</p>
           <h3>蒸気機関</h3>
           <p class="ln">蒸気は、ただの力だった。「工場」という仕組みに変えたとき、生産が爆発した。</p>
-          <p class="rev">02 — STEAM → FACTORY</p>
+          <p class="rev">01 — STEAM → FACTORY</p>
         </div>
-        <div class="era" id="era3">
+        <div class="era" id="era2">
           <p class="yr">1995 — 情報革命</p>
           <h3>インター<br>ネット</h3>
           <p class="ln">通信は、ただの技術だった。「Web」という仕組みに変えたとき、世界の知がつながった。</p>
-          <p class="rev">03 — NETWORK → WEB</p>
+          <p class="rev">02 — NETWORK → WEB</p>
         </div>
-        <div class="era final" id="era4">
+        <div class="era final" id="era3">
           <p class="yr">2026 — 知能革命</p>
           <h3>AI</h3>
           <p class="ln">AIは、まだ「ただの知能」だ。<br><b>御社の仕組みに変わったとき、仕事が変わる。</b><br>その仕組みづくりが、シクミの仕事です。</p>
-          <p class="rev">04 — AI → YOUR SYSTEM</p>
+          <p class="rev">03 — AI → YOUR SYSTEM</p>
         </div>
         <div class="proto-cta" id="protoCta">
           <button type="button" class="btn-gate" id="gateBtn">
             <span>扉を開く</span><span class="mono">— ENTER SHIKUMI</span><span>→</span>
           </button>
         </div>
-        <p class="proto-hud">REVOLUTION <b id="revNum">00</b> / 04<br>[ 装置にタッチできます ]</p>
+        <p class="proto-hud">REVOLUTION <b id="revNum">00</b> / 03<br>[ 装置にタッチできます ]</p>
       </div>
       <div class="proto-spacer" aria-hidden="true"></div>
     </div>
@@ -549,11 +543,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
       <div class="scene-inner">
         <p class="eyebrow">SHIKUMI INC. — AI INTEGRATION</p>
         <h1 class="hero-h1">
-          <i>AIを</i><i>使いこなすのに、</i><br>
-          <i>エンジニアは</i><i><em>いらない</em>。</i>
+          <i>AIを、</i><br>
+          <i>御社の</i><i><em>仕組み</em>に。</i>
         </h1>
         <p class="hero-sub">株式会社シクミは、非エンジニアの現場にAIを実装する会社です。ツールを売って終わりにしない。自分たちで回せる「仕組み」を残します。</p>
-        <p class="ai-chip"><span class="dot"></span><span class="chip-en">THIS SITE WAS BUILT BY AI —&nbsp;</span>このサイトもAIが作りました</p>
       </div>
     </div>
     <div class="marquee" aria-hidden="true">
@@ -647,30 +640,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     </div>
   </section>
 
-  <!-- 05 PROOF -->
-  <section class="scene w-dark" id="proof" data-num="05" data-label="PROOF" data-enter="flip">
+  <!-- 05 COMPANY -->
+  <section class="scene w-cream" id="company" data-num="05" data-label="COMPANY" data-enter="flip">
     <div class="scene-scroll">
       <div class="scene-inner">
         <div class="ghost-num" aria-hidden="true">05</div>
-        <p class="eyebrow fx">05 — PROOF</p>
-        <h2 class="t fx">このサイトは、<br>AIがつくりました。</h2>
-        <p class="proof-copy fx">企画も、デザインも、この文章も——すべてAIとの対話だけで完成。「AIを使いこなす」の意味を、このページ自体でお見せします。</p>
-        <div class="stats">
-          <div class="stat fx"><p class="val"><span data-count="3">0</span><span class="unit">時間</span></p><p class="label">制作時間</p></div>
-          <div class="stat fx"><p class="val"><em>¥0</em></p><p class="label">外注費</p></div>
-          <div class="stat fx"><p class="val"><em>0</em><span class="unit">行</span></p><p class="label">人間が書いたコード</p></div>
-        </div>
-        <p class="proof-close fx">同じ生産性を、御社の業務に実装します。<span class="mono">BUILT WITH CLAUDE (ANTHROPIC) — THE SITE IS THE DEMO.</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 COMPANY -->
-  <section class="scene w-cream" id="company" data-num="06" data-label="COMPANY" data-enter="lift">
-    <div class="scene-scroll">
-      <div class="scene-inner">
-        <div class="ghost-num" aria-hidden="true">06</div>
-        <p class="eyebrow fx">06 — COMPANY</p>
+        <p class="eyebrow fx">05 — COMPANY</p>
         <h2 class="t fx">会社概要</h2>
         <div class="co-grid">
           <div class="mission-card fx">
@@ -693,16 +668,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     </div>
   </section>
 
-  <!-- 07 CONTACT -->
-  <section class="scene w-fire s-contact" id="contact" data-num="07" data-label="CONTACT" data-enter="iris">
+  <!-- 06 CONTACT -->
+  <section class="scene w-fire s-contact" id="contact" data-num="06" data-label="CONTACT" data-enter="iris">
     <p class="tate-kanji" aria-hidden="true">仕掛けよう</p>
     <div class="scene-scroll">
       <div class="scene-inner">
-        <p class="eyebrow fx" style="justify-content:center">07 — CONTACT</p>
+        <p class="eyebrow fx" style="justify-content:center">06 — CONTACT</p>
         <h2 class="fx">まず、<br>話しませんか。</h2>
         <p class="sub fx">AI導入のご相談、研修・セミナーのご依頼はメールでどうぞ。<br>1営業日以内にご返信します。</p>
         <p class="fx"><a class="btn-mail" href="mailto:info@shikumi-ai.com">info@shikumi-ai.com<span>→</span></a></p>
-        <p class="footline fx">© 2026 SHIKUMI INC. — DESIGNED &amp; BUILT WITH AI. ZERO LINES HAND-CODED.</p>
+        <p class="footline fx">© 2026 SHIKUMI INC.</p>
       </div>
     </div>
   </section>
@@ -775,7 +750,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     requestAnimationFrame(function(){ requestAnimationFrame(function(){ scene.classList.add("entered"); }); });
   }
   function afterEnter(scene){
-    if(scene.id === "proof") runCounters();
     if(scene.id === "philosophy") drawSpiral();
     if(scene.id === "hero"){ startHelix(); } else { stopHelix(); }
     if(scene.id === "origin"){ startMachine(); } else { stopMachine(); }
@@ -932,7 +906,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
   var protoIntro = document.getElementById("protoIntro");
   var protoCta = document.getElementById("protoCta");
   var revNum = document.getElementById("revNum");
-  var eras = [document.getElementById("era1"), document.getElementById("era2"), document.getElementById("era3"), document.getElementById("era4")];
+  var eras = [document.getElementById("era1"), document.getElementById("era2"), document.getElementById("era3")];
   var mW = 0, mH = 0, mDPR = 1;
   var mT = 0;            // scroll progress 0..1
   var mRun = false, mLast = 0, mPrev = 0;
@@ -1093,6 +1067,34 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     var W = mW, H = mH;
     var rx = W < 860 ? .5 : .64;
     var g = stepEase(t, 16) * 6.2832 + gearAcc; // stepped rotation (+tap spin)
+    // boiler + flame: the power source (fire cameo)
+    var bx = W < 860 ? W * .17 : W * (rx - .36), by = oy + H * .56;
+    box(bx - 28, by, 56, 32, "rgba(" + WH + ",.55)");
+    line(bx - 28, by + 11, bx + 28, by + 11, "rgba(" + WH + ",.3)", 1);
+    line(bx - 20, by + 32, bx - 20, by + 40, "rgba(" + WH + ",.4)", 1.4);
+    line(bx + 20, by + 32, bx + 20, by + 40, "rgba(" + WH + ",.4)", 1.4);
+    var flare = 1 + taps.fire * .8;
+    for(var L3 = 0; L3 < 2; L3++){
+      var fh3 = (13 - L3 * 5) * flare * (1 + Math.sin(time * (5 + L3 * 2)) * (.25 + taps.fire * .4));
+      mc.fillStyle = "rgba(" + OR + "," + (.85 - L3 * .3) + ")";
+      mc.beginPath();
+      mc.moveTo(bx - 11 + L3 * 3, by + 50);
+      mc.lineTo(bx + 11 - L3 * 3, by + 50);
+      mc.lineTo(bx + Math.sin(time * 4 + L3) * 4 * flare, by + 50 - fh3);
+      mc.closePath(); mc.fill();
+    }
+    // steam from boiler to gears
+    var sfeed = seg(t, .04, .45);
+    if(sfeed > 0){
+      var gtx = W * (rx - .12), gty = oy + H * .42;
+      for(var s4 = 0; s4 < 4; s4++){
+        var sp4 = (time * .55 + s4 * .25) % 1;
+        mc.strokeStyle = "rgba(" + WH + "," + ((1 - sp4) * .4 * sfeed) + ")";
+        mc.beginPath();
+        mc.arc(bx + (gtx - bx) * sp4, (by - 12) + (gty - (by - 12)) * sp4, 5 + sp4 * 12, 0, 6.2832);
+        mc.stroke();
+      }
+    }
     var r1 = Math.min(W * .09, 70), cx1 = W * (rx - .12), cy1 = oy + H * .42;
     gear(cx1, cy1, r1, g, "rgba(" + OR + ",.8)");
     gear(cx1 + r1 * 2.18, cy1, r1 * .62, -g * (r1 / (r1 * .62)) + .3, "rgba(" + WH + ",.55)");
@@ -1236,63 +1238,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     }
   }
 
-  /* causal handoffs between eras: ember->boiler->steam / piston->telegraph->wire / pulses->core */
+  /* causal handoffs between eras: piston->telegraph->wire / pulses->core */
   function drawHandoffs(t, time){
     var W = mW, H = mH, mob = W < 860;
-    // A: 火の粉が落ちてボイラーを沸かし、蒸気が歯車へ (t .16-.44)
-    var a1 = seg(t, .16, .3), a2 = seg(t, .24, .42);
-    if(a1 > 0 && t < .55){
-      var cx1 = mob ? W * .5 : W * .62;
-      var kx = mob ? W * .3 : W * .44, ky = H * 1.14;
-      var path = [[cx1, H * .74], [cx1, H * .96], [kx, H * .96], [kx, ky - 22]];
-      polyPath(path, a1, "rgba(" + WH + ",.14)", 1);
-      for(var i = 0; i < 4; i++){
-        var pt = (time * .5 + i * .25) % 1;
-        if(pt < a1){
-          var pos = pointOnPoly(path, pt);
-          dot(pos[0], pos[1], 2.4, "rgba(" + OR + "," + (.85 * (1 - pt * .3)) + ")");
-        }
-      }
-      // boiler
-      box(kx - 30, ky, 60, 34, "rgba(" + WH + ",.55)");
-      line(kx - 30, ky + 12, kx + 30, ky + 12, "rgba(" + WH + ",.3)", 1);
-      line(kx - 22, ky + 34, kx - 22, ky + 42, "rgba(" + WH + ",.4)", 1.4);
-      line(kx + 22, ky + 34, kx + 22, ky + 42, "rgba(" + WH + ",.4)", 1.4);
-      // fire under boiler
-      if(a2 > 0){
-        for(var L2 = 0; L2 < 2; L2++){
-          var fh2 = (12 - L2 * 5) * a2 * (1 + Math.sin(time * 5 + L2) * .25);
-          mc.fillStyle = "rgba(" + OR + "," + (.8 - L2 * .3) + ")";
-          mc.beginPath();
-          mc.moveTo(kx - 10 + L2 * 3, ky + 52);
-          mc.lineTo(kx + 10 - L2 * 3, ky + 52);
-          mc.lineTo(kx, ky + 52 - fh2);
-          mc.closePath(); mc.fill();
-        }
-      }
-      // steam puffs rising to gear cluster
-      if(a2 > 0){
-        var gx2 = W * ((mob ? .5 : .64) - .12), gy2 = H * 1.42;
-        for(var s2 = 0; s2 < 4; s2++){
-          var stp = (time * .55 + s2 * .25) % 1;
-          var sx2 = kx + (gx2 - kx) * stp;
-          var sy2 = (ky - 26) + (gy2 - (ky - 26)) * stp;
-          mc.strokeStyle = "rgba(" + WH + "," + ((1 - stp) * .4 * a2) + ")";
-          mc.beginPath(); mc.arc(sx2, sy2, 5 + stp * 12, 0, 6.2832); mc.stroke();
-        }
-      }
-    }
-    // B: ピストンが電信機を叩き、信号が電線を走って回路へ (t .44-.62)
-    var b1 = seg(t, .44, .56);
-    if(b1 > 0 && t < .74){
+    // A: ピストンが電信機を叩き、信号が電線を走って回路へ (境界 y=H)
+    var b1 = seg(t, .3, .44);
+    if(b1 > 0 && t < .65){
       var rx = mob ? .5 : .64;
-      var tx = W * (rx + .16), tyy = H * 1.84;
+      var tx = W * (rx + .16), tyy = H * .84;
       box(tx - 18, tyy, 36, 10, "rgba(" + WH + ",.5)");
       var tap = (Math.floor(time * 3.2) % 2 === 0) ? -.4 : -.08; // カク打鍵
       mc.save(); mc.translate(tx - 18, tyy); mc.rotate(tap);
       line(0, 0, 40, 0, "rgba(" + OR + "," + (.5 + .4 * b1) + ")", 2.2);
       mc.restore();
-      var wire = [[tx, tyy + 12], [tx, H * 2.06], [W * .06, H * 2.06], [W * .06, H * 2.72]];
+      var wire = [[tx, tyy + 12], [tx, H * 1.06], [W * .06, H * 1.06], [W * .06, H * 1.72]];
       polyPath(wire, b1, "rgba(" + WH + ",.14)", 1);
       for(var w2 = 0; w2 < 4; w2++){
         var wt = (time * .5 + w2 * .25) % 1;
@@ -1302,11 +1261,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
         }
       }
     }
-    // C: パルスが3本の流れに収束してAIの核へ (t .70-.86)
-    var c1 = seg(t, .7, .84);
+    // B: パルスが3本の流れに収束してAIの核へ (境界 y=2H)
+    var c1 = seg(t, .58, .78);
     if(c1 > 0){
-      var cx4 = mob ? W * .5 : W * .62, cy4 = H * 3.48;
-      var starts = [[W * .15, H * 2.82], [W * .5, H * 2.88], [W * .85, H * 2.82]];
+      var cx4 = mob ? W * .5 : W * .62, cy4 = H * 2.48;
+      var starts = [[W * .15, H * 1.82], [W * .5, H * 1.88], [W * .85, H * 1.82]];
       for(var s3 = 0; s3 < 3; s3++){
         line(starts[s3][0], starts[s3][1], cx4, cy4, "rgba(" + WH + "," + (.1 * c1) + ")", 1);
         for(var k3 = 0; k3 < 3; k3++){
@@ -1328,13 +1287,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     var gstep = mW / 6;
     for(var gx = gstep; gx < mW; gx += gstep){ mc.beginPath(); mc.moveTo(gx, 0); mc.lineTo(gx, mH); mc.stroke(); }
     // world: 4 blocks, camera pans
-    var camY = clamp01((t - .06) / .88) * 3 * mH;
-    var eraT = [seg(t, .06, .28), seg(t, .28, .5), seg(t, .5, .72), seg(t, .72, .97)];
+    var camY = clamp01((t - .06) / .88) * 2 * mH;
+    var eraT = [seg(t, .06, .37), seg(t, .37, .67), seg(t, .67, .97)];
     mc.save(); mc.translate(0, -camY);
-    if(camY < mH) drawEra1(eraT[0], time, 0);
-    if(camY > 0 && camY < mH * 2) drawEra2(eraT[1], time, mH);
-    if(camY > mH && camY < mH * 3) drawEra3(eraT[2], time, mH * 2);
-    if(camY > mH * 2) drawEra4(eraT[3], time, mH * 3);
+    if(camY < mH) drawEra2(eraT[0], time, 0);
+    if(camY > 0 && camY < mH * 2) drawEra3(eraT[1], time, mH);
+    if(camY > mH) drawEra4(eraT[2], time, mH * 2);
     drawHandoffs(t, time);
     // tap effects (world space)
     var bi, br;
@@ -1361,11 +1319,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
 
     // overlays
     protoIntro.style.opacity = t < .05 ? 1 : 0;
-    var revs = ["00", "01", "02", "03", "04"];
-    var ri = t < .06 ? 0 : t < .28 ? 1 : t < .5 ? 2 : t < .72 ? 3 : 4;
+    var revs = ["00", "01", "02", "03"];
+    var ri = t < .06 ? 0 : t < .37 ? 1 : t < .67 ? 2 : 3;
     revNum.textContent = revs[ri];
     eras.forEach(function(el, i){
-      var a = [.07, .29, .51, .73][i], b = [.26, .48, .7, 1.01][i];
+      var a = [.07, .4, .7][i], b = [.35, .64, 1.01][i];
       el.classList.toggle("on", t >= a && t < b);
     });
     protoCta.classList.toggle("on", t > .93);
@@ -1403,15 +1361,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     var x = e.clientX - rect.left;
     var camY = clamp01((mT - .06) / .88) * 3 * mH;
     var wy = (e.clientY - rect.top) + camY;
-    var zone = Math.max(0, Math.min(3, Math.floor(wy / mH)));
+    var zone = Math.max(0, Math.min(2, Math.floor(wy / mH)));
     rings.push({x: x, y: wy, r: 4, max: 130});
     for(var i = 0; i < 9; i++){
       var a = i / 9 * 6.2832 + Math.sin(wy + i) * .5;
       bursts.push({x: x, y: wy, vx: Math.cos(a) * (90 + i * 14), vy: Math.sin(a) * (90 + i * 14) - 50, life: .7});
     }
-    if(zone === 0) taps.fire = 1;
-    else if(zone === 1){ taps.gear = 1; gearVel += 9; }
-    else if(zone === 2) taps.net = 1;
+    if(zone === 0){ taps.gear = 1; gearVel += 9; taps.fire = 1; }
+    else if(zone === 1) taps.net = 1;
     else taps.core = 1;
   }, {passive:true});
   window.addEventListener("resize", mResize);
@@ -1420,7 +1377,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     // reduced motion: show final era + CTA, static frame
     drawMachine(0, 1);
     protoIntro.style.opacity = 0;
-    eras[3].classList.add("on");
+    eras[2].classList.add("on");
     protoCta.classList.add("on");
   }
 
