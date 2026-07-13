@@ -12,17 +12,17 @@
 <style>
 /* ============ tokens ============ */
 :root{
-  --dark:#0b0a09;
-  --dark2:#12100d;
+  --dark:#f5efe6;   /* ベージュ基調（旧ダーク面） */
+  --dark2:#ede3d3;
   --orange:#ff4a00;
   --orange-deep:#e64200;
-  --cream:#faf3ec;
-  --ink:#f4f1ee;
-  --ink-dark:#1a1511;
-  --muted:#9a938c;
-  --muted-dark:#8a7f76;
-  --line:rgba(244,241,238,.1);
-  --line-dark:rgba(26,21,17,.12);
+  --cream:#fdf8f1;  /* カード面はやや白寄り */
+  --ink:#2a221a;
+  --ink-dark:#2a221a;
+  --muted:#8a7d6d;
+  --muted-dark:#8a7d6d;
+  --line:rgba(42,34,26,.14);
+  --line-dark:rgba(42,34,26,.14);
   --font-sans:"Helvetica Neue","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",YuGothic,Arial,sans-serif;
   --font-mono:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
   --pad:clamp(20px,5vw,64px);
@@ -58,10 +58,11 @@ body.on-fire .logo .txt{color:#fff}
 .logo .en{font-family:var(--font-mono);font-size:.54rem;font-weight:400;letter-spacing:.22em;opacity:.65}
 .btn-pill{
   display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.08em;
-  padding:9px 20px;border:1px solid rgba(255,255,255,.7);border-radius:999px;color:#fff;
+  padding:9px 20px;border:none;border-radius:999px;color:#fff;
   background:var(--orange);transition:filter .25s;
 }
 .btn-pill:hover,.btn-pill:focus-visible{filter:brightness(1.12)}
+body.on-fire .btn-pill{background:#fff;color:var(--orange-deep)}
 
 #progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--orange);z-index:90;transition:width .6s cubic-bezier(.7,0,.2,1)}
 
@@ -82,14 +83,13 @@ body.on-fire .place b{color:#fff}
   position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:80;
   display:flex;flex-direction:column;gap:12px;
 }
-.dots button{width:26px;height:26px;border:none;background:none;position:relative}
+.dots button{width:30px;height:22px;border:none;background:none;position:relative}
 .dots button::after{
-  content:"";position:absolute;inset:9px;border-radius:50%;
-  background:#fff;opacity:.4;transition:opacity .3s,transform .3s,background .4s;
+  content:"";position:absolute;left:6px;right:6px;top:10px;height:2px;
+  background:var(--ink);opacity:.3;transition:opacity .3s,background .4s,left .3s,right .3s;
 }
-.dots button.on::after{opacity:1;transform:scale(1.55);background:var(--orange)}
-body.on-light .dots button::after{background:#1a1511}
-body.on-light .dots button.on::after{background:var(--orange-deep)}
+.dots button.on::after{opacity:1;left:2px;right:2px;background:var(--orange-deep)}
+body.on-fire .dots button::after{background:#fff}
 body.on-fire .dots button.on::after{background:#fff}
 .dots button:focus-visible{outline:2px solid var(--orange);outline-offset:2px;border-radius:50%}
 @media (max-width:860px){
@@ -101,15 +101,17 @@ body.on-fire .dots button.on::after{background:#fff}
   display:flex;gap:10px;align-items:center;
 }
 .ctrl button{
-  font-family:var(--font-mono);font-size:.78rem;letter-spacing:.12em;
+  font-size:.8rem;letter-spacing:.1em;font-weight:600;
   padding:13px 20px;border-radius:999px;
-  border:1px solid rgba(255,255,255,.35);
-  background:rgba(11,10,9,.45);color:#fff;
+  border:none;
+  background:rgba(255,255,255,.85);color:var(--ink);
+  box-shadow:0 2px 10px rgba(42,34,26,.12);
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-  transition:background .25s,border-color .25s,transform .25s;
+  transition:background .25s,transform .25s;
 }
-.ctrl button:hover{border-color:var(--orange);background:rgba(255,74,0,.25)}
-.ctrl button.next{background:var(--orange);border-color:rgba(255,255,255,.8);font-weight:700}
+.ctrl button:hover{background:#fff}
+.ctrl button.next{background:var(--orange);color:#fff;font-weight:700}
+body.on-fire .ctrl button.next{background:#fff;color:var(--orange-deep)}
 .ctrl button.next:hover{transform:translateX(3px)}
 .ctrl button[disabled]{opacity:.25;pointer-events:none}
 @media (max-width:860px){
@@ -135,7 +137,7 @@ body.on-fire .dots button.on::after{background:#fff}
 .scene.entered .fx{opacity:1;transform:none}
 
 .eyebrow{
-  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.3em;color:var(--orange);
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.3em;color:var(--orange-deep);
   display:flex;align-items:center;gap:12px;margin-bottom:clamp(16px,3vh,30px);
 }
 .eyebrow::before{content:"";width:36px;height:1px;background:var(--orange);flex:none}
@@ -155,10 +157,10 @@ h2.t{
   position:absolute;top:-4vh;right:0;z-index:0;
   font-family:var(--font-mono);font-weight:700;
   font-size:clamp(6rem,18vw,13rem);line-height:1;
-  color:transparent;-webkit-text-stroke:1px rgba(244,241,238,.09);
+  color:transparent;-webkit-text-stroke:1px rgba(42,34,26,.14);
   pointer-events:none;user-select:none;
 }
-.w-cream .ghost-num{-webkit-text-stroke:1px rgba(26,21,17,.1)}
+.w-cream .ghost-num{-webkit-text-stroke:1px rgba(42,34,26,.12)}
 .w-fire .ghost-num{-webkit-text-stroke:1px rgba(255,255,255,.28)}
 
 /* ============ scene 00: origin (pythagoras timeline) ============ */
@@ -201,8 +203,8 @@ h2.t{
   display:inline-flex;align-items:center;gap:14px;
   font-size:clamp(.95rem,2.6vw,1.05rem);font-weight:700;letter-spacing:.1em;
   padding:17px clamp(24px,4.5vw,38px);border-radius:999px;
-  background:var(--orange);color:#fff;border:1px solid rgba(255,255,255,.75);
-  box-shadow:0 10px 34px rgba(255,74,0,.4);
+  background:var(--orange);color:#fff;border:none;
+  box-shadow:0 10px 34px rgba(255,74,0,.35);
   transition:transform .3s,box-shadow .3s;white-space:nowrap;
 }
 .btn-gate:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(255,74,0,.55)}
@@ -233,17 +235,9 @@ h2.t{
 .ai-chip .dot{width:7px;height:7px;border-radius:50%;background:var(--orange);animation:pulse 2.2s ease infinite;flex:none}
 @media (max-width:520px){.ai-chip .chip-en{display:none}}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,74,0,.55)}50%{box-shadow:0 0 0 7px rgba(255,74,0,0)}}
-.hud{
-  position:absolute;z-index:3;font-family:var(--font-mono);
-  font-size:.58rem;letter-spacing:.18em;color:var(--muted);pointer-events:none;
-}
-.hud b{color:var(--orange);font-weight:400}
-.hud.tl{top:76px;left:var(--pad)}
-.hud.tr{top:76px;right:var(--pad);text-align:right}
-@media (max-width:860px){.hud.tl{display:none}}
 .marquee{
   position:absolute;left:0;right:0;bottom:0;z-index:2;
-  border-top:1px solid var(--line);padding:12px 0;overflow:hidden;background:rgba(18,16,13,.55);
+  border-top:1px solid var(--line);padding:12px 0;overflow:hidden;background:rgba(237,227,211,.7);
   pointer-events:none;
 }
 .marquee-track{display:flex;width:max-content;animation:scrollx 24s linear infinite}
@@ -251,7 +245,7 @@ h2.t{
   flex:none;display:inline-block;padding-right:56px;
   font-weight:800;font-size:clamp(.9rem,2.6vw,1.2rem);letter-spacing:.08em;white-space:nowrap;
 }
-.marquee-track span.ghost{color:transparent;-webkit-text-stroke:1px rgba(244,241,238,.32)}
+.marquee-track span.ghost{color:transparent;-webkit-text-stroke:1px rgba(42,34,26,.35)}
 .marquee-track span.fire{color:var(--orange)}
 @keyframes scrollx{to{transform:translateX(-50%)}}
 @media (max-width:860px){.marquee{padding:10px 0 46px}}
@@ -281,10 +275,11 @@ h2.t{
 /* ============ scene 03: problem ============ */
 .cards{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
 @media (min-width:820px){.cards{grid-template-columns:repeat(3,1fr)}}
-.card{background:var(--dark);padding:clamp(20px,3vw,36px)}
-.card .num{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.2em;color:var(--orange);display:block;margin-bottom:14px}
+.card{background:#fff;padding:clamp(20px,3vw,36px)}
+.card .num{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.2em;color:var(--orange-deep);display:block;margin-bottom:14px}
 .card h3{font-size:1.04rem;font-weight:700;line-height:1.5;margin-bottom:10px;letter-spacing:.02em}
 .card p{font-size:.84rem;color:var(--muted)}
+.card:hover{background:var(--cream)}
 .pivot{
   margin-top:clamp(28px,5vh,48px);text-align:center;
   font-size:clamp(1.3rem,4.4vw,2.4rem);font-weight:800;line-height:1.5;letter-spacing:.02em;
@@ -358,10 +353,10 @@ h2.t{
 .btn-mail{
   display:inline-flex;align-items:center;gap:14px;margin-top:clamp(26px,4.5vh,44px);
   font-family:var(--font-mono);font-size:clamp(.85rem,2.6vw,1.1rem);letter-spacing:.06em;
-  padding:18px clamp(24px,4.5vw,40px);border:1.5px solid #fff;color:#fff;
-  border-radius:999px;transition:background .3s,color .3s;
+  padding:18px clamp(24px,4.5vw,40px);border:none;color:var(--orange-deep);background:#fff;
+  border-radius:999px;transition:filter .3s;box-shadow:0 8px 26px rgba(0,0,0,.14);
 }
-.btn-mail:hover,.btn-mail:focus-visible{background:#fff;color:var(--orange)}
+.btn-mail:hover,.btn-mail:focus-visible{filter:brightness(.96)}
 .footline{
   margin-top:clamp(30px,5vh,50px);
   font-family:var(--font-mono);font-size:.6rem;letter-spacing:.18em;opacity:.8;
@@ -395,11 +390,11 @@ h2.t{
 /* ============ transitions ============ */
 .t-push-out{animation:pushOut .85s cubic-bezier(.7,0,.2,1) forwards}
 .t-push-in{animation:pushIn .85s cubic-bezier(.7,0,.2,1) forwards;z-index:3}
-@keyframes pushOut{to{transform:translateX(-32%) scale(.96);filter:brightness(.55)}}
+@keyframes pushOut{to{transform:translateX(-32%) scale(.96);filter:brightness(.92)}}
 @keyframes pushIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
 .t-push-out-rev{animation:pushOutR .85s cubic-bezier(.7,0,.2,1) forwards}
 .t-push-in-rev{animation:pushInR .85s cubic-bezier(.7,0,.2,1) forwards;z-index:3}
-@keyframes pushOutR{to{transform:translateX(32%) scale(.96);filter:brightness(.55)}}
+@keyframes pushOutR{to{transform:translateX(32%) scale(.96);filter:brightness(.92)}}
 @keyframes pushInR{from{transform:translateX(-100%)}to{transform:translateX(0)}}
 
 .t-shutter-out{animation:shutOut .8s cubic-bezier(.7,0,.2,1) forwards;z-index:3}
@@ -431,34 +426,26 @@ h2.t{
 
 .t-lift-out{animation:liftOut .85s cubic-bezier(.65,0,.25,1) forwards}
 .t-lift-in{animation:liftIn .85s cubic-bezier(.65,0,.25,1) forwards;z-index:3}
-@keyframes liftOut{to{transform:translateY(-30%) scale(.97);filter:brightness(.5)}}
+@keyframes liftOut{to{transform:translateY(-30%) scale(.97);filter:brightness(.92)}}
 @keyframes liftIn{from{transform:translateY(100%)}to{transform:translateY(0)}}
 .t-lift-out-rev{animation:liftOutR .85s cubic-bezier(.65,0,.25,1) forwards}
 .t-lift-in-rev{animation:liftInR .85s cubic-bezier(.65,0,.25,1) forwards;z-index:3}
-@keyframes liftOutR{to{transform:translateY(30%) scale(.97);filter:brightness(.5)}}
+@keyframes liftOutR{to{transform:translateY(30%) scale(.97);filter:brightness(.92)}}
 @keyframes liftInR{from{transform:translateY(-100%)}to{transform:translateY(0)}}
 
 .t-iris-out{animation:irisDim .95s ease forwards}
 .t-iris-in{animation:irisIn .95s cubic-bezier(.6,0,.25,1) forwards;z-index:4}
-@keyframes irisDim{to{filter:brightness(.6)}}
+@keyframes irisDim{to{filter:brightness(.9)}}
 @keyframes irisIn{from{clip-path:circle(0% at 50% 62%)}to{clip-path:circle(142% at 50% 62%)}}
 .t-iris-out-rev{animation:irisOutRev .95s cubic-bezier(.6,0,.25,1) forwards;z-index:4}
 .t-iris-in-rev{animation:irisDimIn .95s ease forwards}
 @keyframes irisOutRev{from{clip-path:circle(142% at 50% 62%)}to{clip-path:circle(0% at 50% 62%)}}
-@keyframes irisDimIn{from{filter:brightness(.6)}to{filter:brightness(1)}}
+@keyframes irisDimIn{from{filter:brightness(.9)}to{filter:brightness(1)}}
 
 .t-fade-out{animation:fadeOut .5s ease forwards}
 .t-fade-in{animation:fadeIn .5s ease forwards;z-index:3}
 @keyframes fadeOut{to{opacity:0}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-
-#cursor{
-  position:fixed;top:0;left:0;width:30px;height:30px;border:1.5px solid var(--orange);
-  border-radius:50%;pointer-events:none;z-index:100;
-  transition:width .25s,height .25s;display:none;
-}
-#cursor.big{width:54px;height:54px}
-@media (pointer:fine){#cursor{display:block}}
 
 a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
 
@@ -472,7 +459,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
 </head>
 <body class="on-dark">
 <div id="progress" aria-hidden="true"></div>
-<div id="cursor" aria-hidden="true"></div>
 
 <header class="header">
   <a class="logo" href="#" id="homeLink" aria-label="シクミ 最初のシーンへ">
@@ -528,7 +514,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
             <span>扉を開く</span><span class="mono">— ENTER SHIKUMI</span><span>→</span>
           </button>
         </div>
-        <p class="proto-hud">REVOLUTION <b id="revNum">00</b> / 03<br>[ 装置にタッチできます ]</p>
+        <p class="proto-hud">REVOLUTION <b id="revNum">00</b> / 03<br>装置にタッチできます</p>
       </div>
       <div class="proto-spacer" aria-hidden="true"></div>
     </div>
@@ -537,8 +523,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
   <!-- 01 HERO -->
   <section class="scene s-hero w-dark" id="hero" data-num="01" data-label="SHIKUMI" data-enter="doors">
     <canvas id="helix" aria-label="ドラッグで回転できる3D螺旋構造"></canvas>
-    <p class="hud tl">SHIKUMI — STRUCTURE 001<br>BUILD: <b id="hudBuild">0%</b></p>
-    <p class="hud tr">ROTATION: <b id="hudRot">0°</b></p>
     <div class="scene-scroll">
       <div class="scene-inner">
         <p class="eyebrow">SHIKUMI INC. — AI INTEGRATION</p>
@@ -884,21 +868,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     });
   }
 
-  /* ============ cursor ============ */
-  var cursor = document.getElementById("cursor");
-  if(window.matchMedia("(pointer: fine)").matches && !RM){
-    var ccx = -100, ccy = -100, ctx2 = -100, cty = -100;
-    document.addEventListener("pointermove", function(e){ ctx2 = e.clientX; cty = e.clientY; }, {passive:true});
-    document.addEventListener("mouseover", function(e){
-      cursor.classList.toggle("big", !!(e.target.closest && e.target.closest("a,button,#helix")));
-    });
-    (function loopCursor(){
-      ccx += (ctx2 - ccx) * .18; ccy += (cty - ccy) * .18;
-      cursor.style.transform = "translate(" + (ccx - 15) + "px," + (ccy - 15) + "px)";
-      requestAnimationFrame(loopCursor);
-    })();
-  }
-
   /* ============ ORIGIN: pythagoras machine ============ */
   var protoScroll = document.getElementById("protoScroll");
   var mCanvas = document.getElementById("machine");
@@ -910,7 +879,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
   var mW = 0, mH = 0, mDPR = 1;
   var mT = 0;            // scroll progress 0..1
   var mRun = false, mLast = 0, mPrev = 0;
-  var OR = "255,74,0", WH = "244,241,238", MU = "154,147,140";
+  var OR = "230,66,0", WH = "42,34,26", MU = "138,125,109";
   /* tap-interaction state */
   var taps = {fire:0, gear:0, net:0, core:0};
   var gearVel = 0, gearAcc = 0;
@@ -1205,7 +1174,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
       mc.globalAlpha = 1;
     }
     // spiral particles
-    var pts2 = 46;
+    var pts2 = 28;
     for(var i = 0; i < pts2; i++){
       var f = i / pts2;
       var ang = f * 5 * 6.2832 * .5 + time * .4;
@@ -1283,7 +1252,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     dt = dt || 0;
     mc.clearRect(0, 0, mW, mH);
     // blueprint grid
-    mc.strokeStyle = "rgba(244,241,238,.05)"; mc.lineWidth = 1;
+    mc.strokeStyle = "rgba(42,34,26,.07)"; mc.lineWidth = 1;
     var gstep = mW / 6;
     for(var gx = gstep; gx < mW; gx += gstep){ mc.beginPath(); mc.moveTo(gx, 0); mc.lineTo(gx, mH); mc.stroke(); }
     // world: 4 blocks, camera pans
@@ -1313,7 +1282,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     mc.restore();
     // connective falling ball between eras (right edge)
     var linkX = mW < 860 ? mW * .92 : mW * .88;
-    line(linkX, 0, linkX, mH, "rgba(244,241,238,.07)", 1);
+    line(linkX, 0, linkX, mH, "rgba(42,34,26,.08)", 1);
     var lb = (t * 4) % 1;
     dot(linkX, lb * mH, 3, "rgba(" + OR + ",.5)");
 
@@ -1385,8 +1354,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
   var heroScene = document.getElementById("hero");
   var canvas = document.getElementById("helix");
   var ctx = canvas.getContext("2d");
-  var hudRot = document.getElementById("hudRot");
-  var hudBuild = document.getElementById("hudBuild");
   var W = 0, H = 0, DPR = 1;
   var pts = [], edges = [];
   var rotY = 0, rotVel = 0, tiltX = -.28;
@@ -1394,7 +1361,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
   var buildT = 0;
   var running = false, lastTs = 0, bornAt = 0;
   var dragging = false, lastX = 0, lastMoveT = 0;
-  var ORANGE = "255,74,0", WHITE = "244,241,238";
+  var ORANGE = "230,66,0", WHITE = "42,34,26";
 
   function buildStructure(){
     pts = []; edges = [];
@@ -1458,23 +1425,23 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
       var vis = Math.min(a.b, b.b);
       if(vis < .05) continue;
       var depth = Math.max(0, Math.min(1, 1 - ((a.z + b.z) * .5 + 300) / 700));
-      var al = (e[2] === 2 ? .16 : .42) * depth * vis + .05;
+      var al = (e[2] === 2 ? .18 : .5) * depth * vis + .06;
       ctx.strokeStyle = "rgba(" + (e[2] === 1 ? WHITE : ORANGE) + "," + al.toFixed(3) + ")";
-      ctx.lineWidth = e[2] === 2 ? .7 : 1.1;
+      ctx.lineWidth = e[2] === 2 ? .8 : 1.5;
       ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
     }
-    for(i = 0; i < pts.length; i++){
+    // 節点は間引いて控えめに（線主体の螺旋）
+    for(i = 0; i < pts.length; i += 4){
       p = proj[i];
       if(!p || p.b < .02) continue;
       var depth2 = Math.max(0, Math.min(1, 1 - (p.z + 300) / 700));
-      var al2 = (.35 + depth2 * .6) * p.b;
+      var al2 = (.3 + depth2 * .5) * p.b;
       var col = pts[i].strand === 0 ? ORANGE : WHITE;
       ctx.fillStyle = "rgba(" + col + "," + al2.toFixed(3) + ")";
-      var r = (pts[i].strand === 0 ? 2.4 : 1.9) * p.s * (0.6 + p.b * .4);
-      ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(r, .6), 0, 6.2832); ctx.fill();
+      var r = 1.7 * p.s * (0.6 + p.b * .4);
+      ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(r, .5), 0, 6.2832); ctx.fill();
     }
   }
-  var hudLast = 0;
   function loopHelix(ts){
     if(!running) return;
     var dt = Math.min((ts - lastTs) / 1000, .25) || .016;
@@ -1486,13 +1453,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
       rotVel *= Math.pow(.25, dt);
     }
     drawHelix();
-    if(ts - hudLast > 120){
-      hudLast = ts;
-      var deg = Math.round(((rotY % 6.2832) / 6.2832) * 360);
-      if(deg < 0) deg += 360;
-      hudRot.textContent = deg + "°";
-      hudBuild.textContent = Math.round(buildT * 100) + "%";
-    }
     requestAnimationFrame(loopHelix);
   }
   function startHelix(){ if(!running && !RM){ running = true; lastTs = performance.now(); if(!bornAt) bornAt = 0; requestAnimationFrame(loopHelix); } }
